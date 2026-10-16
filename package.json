@@ -4,16 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "prisma generate && next build",
+    "build": "prisma7 generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "npx prisma generate"
+    "postinstall": "npx prisma7 generate",
+    "contract:emit": "prisma contract emit"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.7.6",
     "@neondatabase/serverless": "^1.2.0",
     "@prisma/adapter-neon": "^7.10.1",
-    "@prisma/client": "^7.9.0",
+    "@prisma/client": "^7.10.1",
+    "@prisma/orm-postgres": "^8.0.0-rc.18",
     "@reduxjs/toolkit": "^2.8.2",
     "date-fns": "^4.1.0",
     "inngest": "^4.24.0",
@@ -26,9 +28,12 @@
     "recharts": "^3.1.2"
   },
   "devDependencies": {
+    "@prisma/cli-engine": "^0.7.0",
     "@prisma/config": "^7.9.0",
     "@tailwindcss/postcss": "^4",
+    "@types/node": "^26.6.5",
     "dotenv": "^17.4.2",
+    "prisma": "^8.0.0-rc.23",
     "tailwindcss": "^4"
   }
 }
